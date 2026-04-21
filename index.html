@@ -243,7 +243,7 @@ async function saveToFirebase(data, filename) {
     await fbPut(FB_META, { filename: filename || 'arquivo', total: data.length, updatedAt });
     lastKnownUpdatedAt = updatedAt;
     const dtStr = fmtDate(updatedAt);
-    setSyncStatus('synced', '✔ Firebase · ' + dtStr);
+    setSyncStatus('synced', '✔ Nuvem · ' + dtStr);
   } catch(e) {
     setSyncStatus('error', 'Erro ao salvar: ' + e.message);
     throw e;
